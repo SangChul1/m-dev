@@ -60,7 +60,5 @@ jobs:
         run: |
          docker build -t parkpark131/m-dev:redis_tomcat_github_v1 ./Dockerfile
          docker images
-      
-      - name: docker push
-        run: docker push parkpark131:m-dev:redis_tomcat_github_v1
+         docker push parkpark131/m-dev:redis_tomcat_github_v1
         
