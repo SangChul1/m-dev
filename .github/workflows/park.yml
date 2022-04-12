@@ -57,7 +57,10 @@ jobs:
         run: cp ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war ./Dockerfile/my-spring-board-0.0.1-SNAPSHOT.war
                 
       - name: docker build
-        run: docker build -t parkpark131/m-dev:redis_tomcat_github_v1 ./Dockerfile
+        run: |
+         docker build -t parkpark131/m-dev:redis_tomcat_github_v1 ./Dockerfile
+         docker images
+      
+      - name: docker push
+        run: docker push parkpark131:m-dev:redis_tomcat_github_v1
         
-      - name: docker images
-        run: docker imgaes
