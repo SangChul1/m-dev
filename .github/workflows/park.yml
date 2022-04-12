@@ -58,3 +58,6 @@ jobs:
                 
       - name: docker build
         run: docker build -t parkpark131/m-dev:redis_tomcat_github_v1 ./Dockerfile
+        
+      - name: docker images
+        run: docker imgaes
