@@ -36,6 +36,6 @@ jobs:
           cache: 'gradle'
       - run: |
          chmod -X ./gradlew
-         ./gradlew build --no-daemon
+         ./gradlew build
       - name: check build
         run: ls ~/build/libs
