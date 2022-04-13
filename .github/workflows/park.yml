@@ -84,5 +84,8 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
         
+      - name: change file name
+        run: mv ./build/libs/*.war ./build/libs/ROOT.war
+        
       - name: Cloud Storage upload
-        run: gsutil cp ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war gs://storagepsc
+        run: gsutil cp ./build/libs/*.war gs://storagepsc
