@@ -87,7 +87,7 @@ jobs:
       - name: change file name
         run: |
           DATE=$(date +%y-%m-%d-%H:%M)
-          mv ./build/libs/*.war ./build/libs/$DATA.war
+          mv ./build/libs/*.war ./build/libs/$DATE.war
         
       - name: Cloud Storage upload
         run: gsutil cp ./build/libs/*.war gs://storagepsc
