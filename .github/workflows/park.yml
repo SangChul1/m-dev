@@ -73,5 +73,16 @@ jobs:
       - name: was-deploy-restart
         run: kubectl rollout restart deployment/tomcat-was
         
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+        
       - name: Cloud Storage upload
         run: gsutil cp ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war gs://storagepsc
