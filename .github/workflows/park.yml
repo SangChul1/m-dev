@@ -85,7 +85,9 @@ jobs:
         run: 'gcloud info'
         
       - name: change file name
-        run: mv ./build/libs/*.war ./build/libs/ROOT.war
+        run: |
+          DATE=$(date +%y-%m-%d-%H:%M)
+          mv ./build/libs/*.war ./build/libs/$DATA.war
         
       - name: Cloud Storage upload
         run: gsutil cp ./build/libs/*.war gs://storagepsc
