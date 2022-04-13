@@ -50,8 +50,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.parkpark131 }}
-          password: ${{ secrets.2661277b-521b-4389-b053-c4d4329a4cb0 }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
           
       - name: copy war
         run: cp ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war ./Dockerfile/my-spring-board-0.0.1-SNAPSHOT.war
