@@ -61,6 +61,7 @@ jobs:
          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:redis_tomcat_github_v1 ./Dockerfile
          docker images
          docker push ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:redis_tomcat_github_v1
+         
       - name: Get GKE Credentials
         uses: google-github-actions/get-gke-credentials@v0.7.0
         with:
@@ -68,3 +69,6 @@ jobs:
           location: us-central1-c
           project_id: teak-runner-343008
           credentials: ${{ secrets.GCP_SA_KEY }}
+          
+      - name: was-deploy-restart
+        run: kubectl rollout restart deployment/tomcat-was
