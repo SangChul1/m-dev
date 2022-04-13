@@ -72,3 +72,6 @@ jobs:
           
       - name: was-deploy-restart
         run: kubectl rollout restart deployment/tomcat-was
+        
+      - name: Cloud Storage upload
+        run: gsutil cp ./build/libs/my-spring-board-0.0.1-SNAPSHOT.war gs://storagepsc
