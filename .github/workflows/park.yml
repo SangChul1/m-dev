@@ -59,6 +59,7 @@ jobs:
       - name: docker build
         run: |
          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:tomcat_github_ver$GITHUB_RUN_NUMBER ./Dockerfile
+         docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:tomcat_github_latest ./Dockerfile
          docker images
          docker push ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:tomcat_github_ver$GITHUB_RUN_NUMBER
          docker push ${{ secrets.DOCKERHUB_USERNAME }}/m-dev:tomcat_github_latest
